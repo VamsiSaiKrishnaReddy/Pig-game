@@ -1,0 +1,22 @@
+{
+  "name": "pig-game",
+  "version": "1.0.0",
+  "description": "A simple Pig Game built with HTML, CSS, and JavaScript.",
+  "main": "src/script.js",
+  "scripts": {
+    "start": "grunt connect",
+    "build": "grunt",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-contrib-clean": "^2.0.1",
+    "grunt-contrib-connect": "^5.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^5.2.2"
+  }
+}
