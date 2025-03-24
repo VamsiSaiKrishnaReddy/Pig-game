@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo "Installing npm dependencies..."
+      - npm install
+
+  build:
+    commands:
+      - echo "Running build (if defined)..."
+      - npm run build || echo "No build script defined, skipping..."
+
+  post_build:
+    commands:
+      - echo "Deploying dist/ to S3..."
+      - aws s3 sync dist/ s3://pig-game-bucket --delete
+      - echo "Deployment complete!"
+
+artifacts:
+  files:
+    - "dist/**/*"
+  base-directory: dist
+  discard-paths: no
